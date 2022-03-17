@@ -13,7 +13,7 @@ const HandleChange = (evt) =>{
 const onHandleSubmit = (e) =>{
   e.preventDefault();
   addPerson(form);
-  setForm({});
+  alert("Usuario creado (msg temporal)")
 }
 
   return (

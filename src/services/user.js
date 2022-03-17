@@ -10,6 +10,16 @@ export const showAllPerson= async () => {
   }
 };
 
+export const showOnePerson= async (id) => {
+  try {
+    const response= await fetch(`${API_URL}/person/${id}`);
+    const data= await response.json();
+    return data;
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
 export const addPerson= async (person) => {
   const payload ={
     method: "POST",
@@ -27,7 +37,7 @@ export const addPerson= async (person) => {
   }
 };
 
-export const updatePerson= async (id, person) => {
+export const updateUser= async (id, person) => {
   const payload ={
     method: "PATCH",
     headers: {
@@ -35,6 +45,17 @@ export const updatePerson= async (id, person) => {
     },
     body: JSON.stringify(person)
   }
+  try {
+    const response= await fetch(`${API_URL}/person/${id}`, payload);
+    const data= await response.json();
+    return data;
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
+export const deleteUser= async (id) => {
+  const payload ={method: "DELETE"}
   try {
     const response= await fetch(`${API_URL}/person/${id}`, payload);
     const data= await response.json();
