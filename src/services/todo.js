@@ -15,7 +15,7 @@ export async function createTodo(todo) {
     headers: {
       'content-Type': 'application/json',
     },
-    body: JSON.stringifty(todo),
+    body: JSON.stringify(todo),
   }
   try {
     const response= await fetch(`${API_URL}/todo`,payload);
@@ -32,7 +32,7 @@ export async function updateTodo(id, todo) {
     headers: {
       'content-Type': 'application/json',
     },
-    body: JSON.stringifty(todo),
+    body: JSON.stringify(todo),
   }
   try {
     const response= await fetch(`${API_URL}/todo/${id}`,payload);
